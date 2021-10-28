@@ -87,13 +87,6 @@ int	main(int ac, char **av)
 	if (ft_lstsize(pile_a) == 3)
 		ps_simple_sort(pile_a, NULL, &output);
 	ps_quick_sort_pile_a(pile_a, NULL, ft_lstsize(pile_a), &output);
-	t_list *lol = output;
-	while (lol)
-	{
-	//	ft_printf("%s\n", lol->content);
-		lol = lol->next;
-	}
-	//ft_printf("dif\n");
 	ps_optimise_output(&output);
 	while (output)
 	{
