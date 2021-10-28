@@ -47,9 +47,9 @@ void	ps_simple_sort_pile_a(t_list *pile_a, t_list *pile_b, int len, \
 		ps_s_instructions("sa", &pile_a, &pile_b, output);
 	if (len == 3 && !(v[0] > v[1] && v[0] < v[2]))
 	{
-		ps_p_instructions("pb", &pile_a, &pile_b, output);
+		ps_r_instructions("ra", &pile_a, &pile_b, output);
 		ps_s_instructions("sa", &pile_a, &pile_b, output);
-		ps_p_instructions("pa", &pile_a, &pile_b, output);
+		ps_rr_instructions("rra", &pile_a, &pile_b, output);
 	}
 	if (len == 3 && v[0] > v[2] && v[1] > v[2])
 		ps_s_instructions("sa", &pile_a, &pile_b, output);

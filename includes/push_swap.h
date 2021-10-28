@@ -22,6 +22,9 @@ void	ps_rr_instructions(char *instr, t_list **pile_a, t_list **pile_b, t_list **
 
 void	ps_optimise_output(t_list **output);
 
+void	ps_descending_pile_a(t_list **pile_a, t_list **pile_b, int len, int median, t_list **output); 
+void	ps_descending_pile_b(t_list **pile_a, t_list **pile_b, int len, int median, t_list **output); 
+
 void	ps_simple_sort(t_list *pile_a, t_list *pile_b, t_list **output);
 void	ps_simple_sort_pile_a(t_list *pile_a, t_list *pile_b, int len, t_list **output);
 void	ps_simple_sort_pile_b(t_list *pile_a, t_list *pile_b, int len, t_list **output);

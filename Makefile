@@ -14,7 +14,7 @@ LFT_NAME = libft.a
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = push_swap.h
 SRC_NAME = push_swap.c ps_quick_sort.c ps_simple_sort.c ps_instructions.c \
-	   ps_optimise_output.c
+	   ps_optimise_output.c ps_optimise_quick_sort.c
 
 LFT = $(addprefix $(LFT_PATH),$(LFT_NAME))
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
