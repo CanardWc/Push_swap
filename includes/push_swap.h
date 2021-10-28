@@ -6,13 +6,6 @@
 # include <errno.h>
 # include <string.h>
 
-typedef struct	s_values
-{
-	int	median;
-	int	pushed;
-	int	pushed_under;
-}		t_values;
-
 void	ps_error(void);
 
 void	ps_s_instructions(char *instr, t_list **pile_a, t_list **pile_b, t_list **output);
