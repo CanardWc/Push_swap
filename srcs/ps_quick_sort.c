@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_quick_sort.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgrea <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 16:27:05 by fgrea             #+#    #+#             */
+/*   Updated: 2021/11/09 17:28:08 by fgrea            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 int	ps_is_sorted(t_list *pile, int indicator, int len)
@@ -18,39 +30,9 @@ int	ps_is_sorted(t_list *pile, int indicator, int len)
 	return (0);
 }
 
-int	ps_get_median(t_list *pile, int len)
-{
-	int	*list;
-	int	j;
-	int	i;
-	
-	list = (int *)malloc(sizeof(int) * len);
-	if (list == NULL)
-		ps_error();
-	i = -1;
-	while (++i < len)
-	{
-		list[i] = *(int *)(pile->content);
-		pile = pile->next;
-	}
-	i = -1;
-	while (++i < len)
-	{
-		j = -1;
-		while (++j < len)
-			if (list[j] > list[i])
-				ft_swap(&list[j], &list[i]);
-	}
-	i = list[len / 2];
-	free(list);
-	return (i);
-}
-
 void	ps_quick_sort_pile_b(t_list *pile_a, t_list *pile_b, int len, \
 		t_list **output)
 {
-	int	median;
-
 	if (!ps_is_sorted(pile_b, 1, len))
 	{
 		while (len--)
@@ -59,8 +41,7 @@ void	ps_quick_sort_pile_b(t_list *pile_a, t_list *pile_b, int len, \
 	}
 	if (len < 4)
 		return (ps_simple_sort_pile_b(pile_a, pile_b, len, output));
-	median = ps_get_median(pile_b, len);
-	ps_descending_pile_b(&pile_a, &pile_b, len, median, output);
+	ps_descending_pile_b(&pile_a, &pile_b, len, output);
 	ps_quick_sort_pile_a(pile_a, pile_b, len / 2 + len % 2, output);
 	ps_quick_sort_pile_b(pile_a, pile_b, len / 2, output);
 }
@@ -68,14 +49,11 @@ void	ps_quick_sort_pile_b(t_list *pile_a, t_list *pile_b, int len, \
 void	ps_quick_sort_pile_a(t_list *pile_a, t_list *pile_b, int len, \
 		t_list **output)
 {
-	int	median;
-
 	if (!ps_is_sorted(pile_a, 0, len))
 		return ;
 	if (len < 4)
 		return (ps_simple_sort_pile_a(pile_a, pile_b, len, output));
-	median = ps_get_median(pile_a, len);
-	ps_descending_pile_a(&pile_a, &pile_b, len, median, output);
+	ps_descending_pile_a(&pile_a, &pile_b, len, output);
 	ps_quick_sort_pile_a(pile_a, pile_b, len / 2 + len % 2, output);
 	ps_quick_sort_pile_b(pile_a, pile_b, len / 2, output);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_simple_sort.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgrea <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 16:27:44 by fgrea             #+#    #+#             */
+/*   Updated: 2021/11/09 16:27:54 by fgrea            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 int	*ps_get_first_values(t_list *pile)
@@ -32,7 +44,7 @@ void	ps_simple_sort_pile_b(t_list *pile_a, t_list *pile_b, int len, \
 		if (len == 3 && mv_count == 2 && !(v[0] < v[1] && v[0] > v[2]))
 			ps_s_instructions("sb", &pile_a, &pile_b, output);
 		if (len == 3 && mv_count == 1 && v[0] < v[2] && v[1] < v[2])
-		ps_s_instructions("sa", &pile_a, &pile_b, output);
+			ps_s_instructions("sa", &pile_a, &pile_b, output);
 	}
 	free(v);
 }

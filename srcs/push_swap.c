@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgrea <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 16:28:32 by fgrea             #+#    #+#             */
+/*   Updated: 2021/11/09 16:29:45 by fgrea            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 void	ps_error(void)
@@ -11,8 +23,8 @@ void	ps_error(void)
 
 int	*ps_check_value(char *av)
 {
-	int	i;
-	int	*ret;
+	int		i;
+	int		*ret;
 	char	*verif;
 
 	if (*av == '+' || *av == '-')
@@ -40,7 +52,7 @@ int	*ps_check_value(char *av)
 void	ps_check_duplicate(t_list *pile)
 {
 	t_list	*tmp;
-	int	value;
+	int		value;
 
 	while (pile)
 	{
@@ -59,7 +71,7 @@ void	ps_check_duplicate(t_list *pile)
 t_list	*ps_create_pile(char **av)
 {
 	t_list	*pile_a;
-	int	*ret;
+	int		*ret;
 
 	pile_a = NULL;
 	while (*av)
@@ -80,6 +92,7 @@ int	main(int ac, char **av)
 {
 	t_list	*pile_a;
 	t_list	*output;
+
 	if (ac < 2)
 		ps_error();
 	pile_a = ps_create_pile(++av);
