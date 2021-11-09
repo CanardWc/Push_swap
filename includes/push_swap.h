@@ -6,7 +6,7 @@
 /*   By: fgrea <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:17:42 by fgrea             #+#    #+#             */
-/*   Updated: 2021/11/09 16:24:41 by fgrea            ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 20:31:38 by fgrea            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <libft.h>
-# include <fcntl.h>
 # include <errno.h>
 # include <string.h>
 

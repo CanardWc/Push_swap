@@ -6,7 +6,7 @@
 /*   By: fgrea <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:28:32 by fgrea             #+#    #+#             */
-/*   Updated: 2021/11/09 16:29:45 by fgrea            ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 20:40:28 by fgrea            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ps_error(void)
 {
 	if (errno == 0)
-		ft_printf("Wrong arguments\n");
+		ft_putstr_fd("Wrong arguments\n", 1);
 	else
 		perror(strerror(errno));
 	exit(0);
@@ -100,10 +100,12 @@ int	main(int ac, char **av)
 	if (ft_lstsize(pile_a) == 3)
 		ps_simple_sort(pile_a, NULL, &output);
 	ps_quick_sort_pile_a(pile_a, NULL, ft_lstsize(pile_a), &output);
-	ps_optimise_output(&output);
+	if (output)
+		ps_optimise_output(&output);
 	while (output)
 	{
-		ft_printf("%s\n", output->content);
+		ft_putstr_fd(output->content, 1);
+		ft_putstr_fd("\n", 1);
 		output = output->next;
 	}
 	exit(0);
